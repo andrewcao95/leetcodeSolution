@@ -14,9 +14,7 @@ public class Solution {
     }
 }
 
-```
 
-```java
 class Solution {
     public boolean canAttendMeetings(int[][] intervals) {
         Arrays.sort(intervals, (x, y) -> x[0] - y[0]);

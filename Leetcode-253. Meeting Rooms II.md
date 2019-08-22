@@ -19,6 +19,8 @@ public class Solution {
         for (int i = 0; i < intervals.length; i++) {
             starts[i] = intervals[i].start;
             ends[i] = intervals[i].end;
+            //starts[i] = intervals[i][0];
+            //ends[i] = intervals[i][1]; 
         }
         Arrays.sort(starts);
         Arrays.sort(ends);
@@ -34,4 +36,5 @@ public class Solution {
         return res;
     }
 }
+
 ```
