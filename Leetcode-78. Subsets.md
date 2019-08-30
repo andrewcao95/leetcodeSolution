@@ -1,4 +1,4 @@
-## Solution
+## Solution 1
 facebook 面经的常考题
 采用回溯算法实现，回溯算法的基本形式是“递归+循环”，正因为循环中嵌套着递归，递归中包含循环，这才使得回溯比一般的递归和单纯的循环更难理解，其实我们熟悉了它的基本形式，就会觉得这样的算法难度也不是很大。原数组中的每个元素有两种状态：存在和不存在。
 
@@ -25,4 +25,26 @@ class Solution {
     }
 }
 
+```
+
+## Solution 2
+bit manipulation 基于位操作的思想来做
+```java
+public class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        
+        for (int i = 0; i < (1 << nums.length); i++) {
+            List<Integer> subSet = new ArrayList<>();
+            
+            for (int b = 0; b < nums.length; b++) {
+                if (((i >> b) & 1) == 1) {
+                    subSet.add(nums[b]);
+                }
+            }
+            result.add(subSet);
+        }
+        return result;
+    }
+}
 ```
