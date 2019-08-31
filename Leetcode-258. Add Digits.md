@@ -35,7 +35,7 @@ class Solution {
 }
 ```
 
-## Solution 2
+## Follow up
 Follow up:
 Could you do it without any loop/recursion in O(1) runtime?
 
@@ -61,6 +61,8 @@ Could you do it without any loop/recursion in O(1) runtime?
 19  1
 20  2
 ```
+
+(num - 1) % 9 + 1 是为了避免9%9=0的情况的出现
 
 ```java
 class Solution {

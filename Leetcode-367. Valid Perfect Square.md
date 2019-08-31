@@ -1,6 +1,8 @@
 开方问题一般有几种解法
 - 暴力法（时间复杂度很高）
 - 二分法（面试时最容易问到）
+- x * x > sum
+- 牛顿法（数学问题）
 
 ## Solution 1 暴力法
 - time: O(n)
@@ -54,6 +56,25 @@ class Solution {
             }
         }
         return false;
+    }
+}
+```
+
+## Solution 4 牛顿法
+遵循公式：
+
+f(x) = x * x - num
+
+x(n+1) = 1/2 * (x(n) + n / x(n));
+
+```java
+class Solution { 
+    public boolean isPerfectSquare(int num) {
+        long x = num;
+        while (x * x > num) {
+            x = (x + num / x) / 2;
+        }
+        return x * x == num;
     }
 }
 ```

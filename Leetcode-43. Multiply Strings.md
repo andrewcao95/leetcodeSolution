@@ -20,7 +20,7 @@ class Solution {
                 int product = (num1.charAt(i) - '0') * (num2.charAt(j) - '0');
                 int p1 = i + j;
                 int p2 = i + j + 1;
-                int sum = product + digits[p2];
+                int sum = product + digits[p2]; //将个位数值相加
                 digits[p2] = sum % 10;
                 digits[p1] = sum / 10 + digits[p1];
             }
@@ -28,7 +28,7 @@ class Solution {
         
         StringBuilder sb = new StringBuilder();
         for (int digit : digits) {
-            if (!(digit == 0 && sb.length() == 0)) {
+            if (!(digit == 0 && sb.length() == 0)) { //判断首部是0的情况跳过
                 sb.append(digit);
             }
         }
