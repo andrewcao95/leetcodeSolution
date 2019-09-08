@@ -27,7 +27,7 @@ public class Solution {
         int res = 0;
         int end = 0;
         for (int i = 0; i < intervals.length; i++) {
-            if (starts[i] < ends[end]) { //扫描线判断
+            if (starts[i] < ends[end]) { //扫描线判断，这里非常关键
                 res++;
             } else {
                 end++;
