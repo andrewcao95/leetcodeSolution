@@ -1,6 +1,20 @@
 ## Solution 1
 PriorityQueue解法
-
+```java
+class Solution {
+    public int findKthLargest(int[] nums, int k) {
+        if (nums == null || nums.length == 0) return 0;
+        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+        for (int num : nums) {
+            priorityQueue.offer(num);
+            if (priorityQueue.size() > k) {
+                priorityQueue.poll();
+            }
+        }
+        return priorityQueue.poll();
+    }
+}
+```
 
 ## Solution 2
 QuickSort中QuickSelect的思路
