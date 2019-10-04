@@ -44,7 +44,7 @@ class Solution {
 ```
 
 ## Solution 3  x * x > m
-- time: O(sqrt(n)) sqrt(n)比logn还要小
+- time: O(sqrt(n)) 
 - space: O(1)
 ```java
 class Solution { 
@@ -61,6 +61,10 @@ class Solution {
 ```
 
 ## Solution 4 牛顿法
+
+time: O(logN)
+space: O(1)
+
 遵循公式：
 
 f(x) = x * x - num
