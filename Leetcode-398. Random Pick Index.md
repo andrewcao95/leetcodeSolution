@@ -18,7 +18,7 @@ class Solution {
                 list.add(i);
             }
         }
-        return list.get(rmd.nextInt(list.size()));
+        return list.get(rmd.nextInt(list.size())); // 注意这里是list坐标0，1，2，3，要从list中找到对应的原数组坐标再返回
     }
 }
 

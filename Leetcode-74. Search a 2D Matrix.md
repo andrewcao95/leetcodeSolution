@@ -10,7 +10,7 @@ class Solution {
         int row = matrix.length;
         int col = matrix[0].length;
         int begin = 0;
-        int end = row * col - 1;
+        int end = row c* col - 1;
         while (begin <= end) {
             int mid = (end - begin) / 2 + begin;
             int value = matrix[mid / col][mid % col]; //要背
