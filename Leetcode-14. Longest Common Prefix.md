@@ -2,12 +2,13 @@
 ```java
 class Solution {
     public String longestCommonPrefix(String[] strs) {
-        if (strs == null || strs.length == 0) return "";
-        
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
         for (int i = 0; i < strs[0].length(); i++) {
             char c = strs[0].charAt(i);
             for (int j = 1; j < strs.length; j++) {
-                if (i == strs[j].length() || strs[j].charAt(i) != c) { //这里第一个条件是当第一个字符串的比较指针已经到达后面这个字符的末尾的时候，说明比较已经结束了
+                if (i == strs[j].length() || strs[j].charAt(i) != c) {
                     return strs[0].substring(0, i);
                 }
             }
@@ -15,4 +16,44 @@ class Solution {
         return strs[0];
     }
 }
+
 ```
+
+
+## Solution 2
+```java
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        int minLen = Integer.MAX_VALUE;
+        for (String str : strs) {
+            minLen = Math.min(minLen, str.length());
+        }
+        
+        int low = 1;
+        int high = minLen;
+        while (low <= high) {
+            int mid = (high - low) / 2 + low;
+            if (isCommon(strs, mid)) {
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        return strs[0].substring(0, (low + high) / 2);
+    }
+    
+    public boolean isCommon(String[] strs, int len) {
+        String string = strs[0].substring(0, len);
+        for (int i = 1; i < strs.length; i++) {
+            if (!strs[i].startsWith(string)) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
