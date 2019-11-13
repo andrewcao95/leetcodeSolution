@@ -54,7 +54,6 @@ class Solution {
             }
             res.addFirst(cur.val);
         }
-        System.out.println(res.toString());
         return res;
     }
 }
